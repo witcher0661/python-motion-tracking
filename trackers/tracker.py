@@ -27,3 +27,5 @@ class Tracker:
             detection_supervision = sv.Detections.from_ultralytics(detection)
 
             print(detection_supervision)
+
+            break
