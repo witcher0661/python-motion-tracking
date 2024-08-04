@@ -83,3 +83,11 @@ class Tracker:
             player_dict = tracks["players"][frame_num]
             ball_dict = tracks["ball"][frame_num]
             referee_dict = tracks["referees"][frame_num]
+
+            # Draw Players
+            for track_id, player in player_dict.items():
+                color = player.get("team_color",(0,0,255))
+                frame = self.draw_ellipse(frame, player["bbox"],color, track_id)
+
+                if player.get('has_ball',False):
+                    frame = self.draw_traingle(frame, player["bbox"],(0,0,255))
